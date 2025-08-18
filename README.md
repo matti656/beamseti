@@ -35,7 +35,7 @@ This package supports easy reproducibility and extensible analysis for SETI rese
   - `astropy` - Astronomy utilities  
   - `astroquery` - Astronomical data querying  
   - `s2sphere` - Spherical geometry for accurate sky coverage calculations  
-  - `synthpop` - Synthetic Galactic stellar population synthesis (external package by Macy Huston)
+  - `synthpop` - Synthetic Galactic stellar population synthesis (external package by Klüter & Huston et al. 2025)
 
 
 ## Installation Instructions
@@ -52,7 +52,7 @@ This package supports easy reproducibility and extensible analysis for SETI rese
 3. Install the package with dependencies:
    pip install -e .
 
-   This will install the package and all required dependencies.
+   This will install the BEAMSETI package and all required dependencies.
 
 4. Additional setup (if needed):
 
@@ -60,14 +60,17 @@ This package supports easy reproducibility and extensible analysis for SETI rese
     Clone Macy's SynthPop repository:
    git clone https://github.com/synthpop-galaxy/synthpop.git
    cd synthpop
-   pip install synthpop
+   pip install -e .
 
 ## Usage Examples
+
+**Refer to function docstrings in notebooks folder for detailed input parameters and expected output formats.**
 
 Import the key functions from the package:
 
 from beamseti import process_gaia, process_synthpop, process_ned, process_uno
 from beamseti.plotting import plot_logTR_vs_logEIRPmin, plot_density_colored_cmd_catalog_compare
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import itertools
@@ -83,8 +86,6 @@ catalogs = {
 }
 fig, ax = plot_density_colored_cmd_catalog_compare(catalogs, overlay=True)
 
-Refer to function docstrings for detailed input parameters and expected output formats.
-
 
 # Data and File Overview
 
@@ -96,8 +97,9 @@ Refer to function docstrings for detailed input parameters and expected output f
 
 - File Organization:**  
   - beamseti/ — Python package modules with core functions and plotting utilities.  
-  - notebooks/ — Example Jupyter notebooks demonstrating data processing and visualization workflows.  
+  - notebooks/ —   Docstrings for each pipeline.
   - setup.py and requirements.txt — For package installation and dependency management.  
+  - tutorial.ipynb - Example Jupyter notebooks demonstrating data processing and visualization workflows.
 
 - Data Preprocessing:
   - Dataframes expected to be cleaned for missing values and correct ra/dec/fwhm_arcmin/fmin/nu_rel/field name/receiving_band columns before processing.  
