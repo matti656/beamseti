@@ -42,11 +42,14 @@ This package supports easy reproducibility and extensible analysis for SETI rese
 
 1. Clone the repository:
    git clone https://github.com/matti656/beamseti.git
+
    cd beamseti
 
 2. (Optional) Create and activate a virtual environment:
    python -m venv my_venv
+
    source my_venv/bin/activate  # Mac/Linux
+
    my_venv\Scripts\activate     # Windows
 
 3. Install the package with dependencies:
@@ -58,9 +61,13 @@ This package supports easy reproducibility and extensible analysis for SETI rese
 
    - To install or update SynthPop separately:
     Clone Macy's SynthPop repository:
+
    git clone https://github.com/synthpop-galaxy/synthpop.git
+
    cd synthpop
+
    pip install -e .
+
    pip install ebfpy
 
 ## Usage Examples
@@ -70,14 +77,20 @@ This package supports easy reproducibility and extensible analysis for SETI rese
 Import the key functions from the package:
 
 from beamseti import process_gaia, process_synthpop, process_ned, process_uno
+
 from beamseti.plotting import plot_logTR_vs_logEIRPmin, plot_density_colored_cmd_catalog_compare
+
 import numpy as np
+
 import pandas as pd
+
 import matplotlib.pyplot as plt
+
 import itertools
 
 # Example: Process Gaia data
 gaia_df = pd.read_csv('path/to/field_data.csv')
+
 result_gaia = process_gaia(gaia_df,... split_by_band=True)
 
 # Example: Compare CMDs overlay of Gaia and SynthPop across bands
@@ -85,6 +98,7 @@ catalogs = {
     'Gaia': {'GBT-L': gaia_df_l, 'GBT-S': gaia_df_s},
     'SynthPop': {'GBT-L': synthpop_df_l}
 }
+
 fig, ax = plot_density_colored_cmd_catalog_compare(catalogs, overlay=True)
 
 
@@ -166,10 +180,13 @@ For support and questions, please open an issue on GitHub or contact via email.
 Planned enhancements include:  
 
 - Expanded support for additional SETI survey catalogs and receiver bands.  
+- Improve NED clustering deduplication & extend redshift/distance coverage. 
+- Refine stellar population assumptions for NED and Uno.
+- Incorporate de-extinction for Gaia.
+- Apply code to new Breakthrough survey fields and results.
 - Improved uncertainty quantification and error propagation in pipelines.  
 - Additional interactive visualization tools and web-based dashboards.  
-- Publication-ready example notebooks and tutorials.  
-- Integration with Drake equation parameter estimation tools.  
+- Integration with Drake equation parameters for intermittent waveform and time domain consideration.  
 
 Thank you for exploring the SETI Catalog Tools. I hope it accelerates your research in the exciting search for extraterrestrial intelligence!
 
