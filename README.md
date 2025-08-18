@@ -61,6 +61,7 @@ This package supports easy reproducibility and extensible analysis for SETI rese
    git clone https://github.com/synthpop-galaxy/synthpop.git
    cd synthpop
    pip install -e .
+   pip install ebfpy
 
 ## Usage Examples
 
