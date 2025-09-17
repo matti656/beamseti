@@ -2,7 +2,7 @@
 
 ## Overview
 
-beamseti is a Python package providing functions for analyzing and comparing empirical and synthetic astronomical catalogs in the context of the Search for Extraterrestrial Intelligence (SETI). It incorporates pipelines and plotting utilities that process and visualize data from surveys like Gaia DR3, NED, SynthPop, and others, enabling complementary statistical and empirical constraints on radio SETI survey sensitivity and transmitter rate estimates.
+beamseti is a Python package providing functions for analyzing and comparing empirical and synthetic astronomical catalogs in the context of the Search for Extraterrestrial Intelligence (SETI). It incorporates pipelines and plotting utilities that process and visualize data from surveys like Gaia DR3, NED, SynthPop, and the GSMF, enabling complementary statistical and empirical constraints on radio SETI survey sensitivity and transmitter rate estimates.
 
 Key functionalities include:
 
